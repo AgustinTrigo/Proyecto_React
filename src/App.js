@@ -1,11 +1,11 @@
-import Navbar from './assets/components/NavBar';
+import NavBar from './assets/components/NavBar';
 import './assets/css/navbar.css'
 import './assets/css/style.css';
 
 function App() {
   return (
     <header>
-      <Navbar />
+      <NavBar />
     </header>
   );
 }
