@@ -7,3 +7,28 @@
 body{
     font-family: 'Bebas Neue', cursive;
 }
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin-top: 50px;
+}
+
+.card h2{
+    margin-bottom: 5px;
+}
+
+
+.contador{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 200px;
+}
+
+.contador input{
+    width: 30px;
+}
