@@ -8,13 +8,25 @@ body{
     font-family: 'Bebas Neue', cursive;
 }
 
+.container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
 .card{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 300px;
-    margin-top: 50px;
+    margin: 50px;
+    padding: 20px 0px;
+    border: solid 1px black;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .card h2{

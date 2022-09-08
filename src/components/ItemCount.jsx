@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const ItemCount = ({var1, var2}) =>{
-    const [numero, btn] = useState(1);
-    useEffect(()=>{
-        return(()=>{
-        })
-    }, [numero]);
-
+    const [numero, btn] = useState(var2);
 
     return(
         <div>
