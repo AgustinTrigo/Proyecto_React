@@ -6,16 +6,17 @@
     align-items: center;
 }
 
-.navbar h2{
+.navbar h2, li{
     color: white;
-    letter-spacing: 1.3px;
+    
     font-weight: 300;
+    text-transform: uppercase;
 }
 
 .navbar__logo{
     position: relative;
     left: 50px;
-    width: 300px;
+    width: 120px;
 }
 
 .navbar__logo img{
