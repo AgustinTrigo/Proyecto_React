@@ -37,7 +37,7 @@ body{
 }
 
 .card:hover{
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -50,4 +50,18 @@ body{
 
 .contador input{
     width: 30px;
+}
+
+
+.card__detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 260px;
+    margin: 50px 25px;
+    padding: 20px 0px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 }
