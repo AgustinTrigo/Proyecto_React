@@ -52,16 +52,37 @@ body{
     width: 30px;
 }
 
-
 .card__detail{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 260px;
-    margin: 50px 25px;
-    padding: 20px 0px;
+    width: 900px;
+    height: 320px;
     border-radius: 5px;
     background-color: white;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+
+.card__detail--container{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 80px 80px 80px 80px;
+    grid-template-areas: 
+    "img text inputs"
+    "img text inputs"
+    "img text inputs"
+    "img text inputs";
+    align-items: center;
+    justify-items: center;
+}
+
+.card__detail--img{
+    grid-area: img;
+}
+
+.card__detail--text{
+    grid-area: text;
+}
+
+.card__detail--inputs{
+    grid-area: inputs;
 }
