@@ -1,5 +1,6 @@
 import React from "react";
 import ItemCount from "./ItemCount";
+//import img from "../assets/img/hisopos.jpg"
 
 const ItemDetail = ({item}) =>{
     return(
