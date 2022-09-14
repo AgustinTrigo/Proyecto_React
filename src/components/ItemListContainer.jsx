@@ -2,30 +2,52 @@ import React from "react";
 //import ItemCount from "./ItemCount";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 
 const ItemListContainer = () =>{
     
     const [items, setItems] = useState([]);
+    const {tipo} = useParams();
     useEffect(() => {
         const productos = [
-           {"id":1, "nombre":"producto 1", "precio":100, "descripcion":"Este es el producto uno)", "stock":4},
-           {"id":2, "nombre":"producto 2", "precio":200, "descripcion":"Este es el producto dos", "stock":3},
-           {"id":3, "nombre":"producto 3", "precio":300, "descripcion":"Este es el producto tres", "stock":5},
-           {"id":4, "nombre":"producto 4", "precio":400, "descripcion":"Este es el producto cuatro", "stock":2}
+            {"id":1, "nombre":"acondicionador solido", "precio":100, "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nobis.", "stock":4, "img":"../imagenes/acondicionador_solido.jpg", "categoria":"baño"},
+            {"id":2, "nombre":"esponja vegetal", "precio":200, "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nobis.", "stock":3, "img":"../imagenes/esponja_vegetal.jpg", "categoria":"cocina"},
+            {"id":3, "nombre":"maquina de afeitar", "precio":300, "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nobis.", "stock":5, "img":"../imagenes/maquina_afeitar.jpg", "categoria":"personal"},
+            {"id":4, "nombre":"cepillo de dientes", "precio":400, "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nobis.", "stock":2, "img":"../imagenes/cepillos_dientes.jpg", "categoria":"baño"}
         ];
+
+        let categoria = "";
+        console.log()
+        switch(tipo){
+            case "cocina":
+                categoria = "cocina";
+            break
+            case "baño":
+                categoria = "baño";
+            break
+            case "personal":
+                categoria = "personal";
+            break
+            default:
+        }
 
         const getProductos = new Promise((resolve) => {
             setTimeout(() => {
                 resolve(productos);
-            }, 2000);
+            }, 500);
         });
 
         getProductos.then((respuesta) => {
-            setItems(respuesta);
+            if(categoria === ""){
+                setItems(respuesta)
+            }else{
+                const productoFiltrado = respuesta.filter(e => e.categoria === categoria);
+                setItems(productoFiltrado);
+            }
         });
 
-    }, []);
+    }, [tipo]);
 
     return (
         <div>

@@ -17,20 +17,25 @@ body{
 }
 
 .card{
-    grid-area: "card";
+    grid-area: card;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    max-width: 260px;
+    max-width: 300px;
+    height: 430px;
     margin: 50px 25px;
-    padding: 20px 0px;
     border-radius: 5px;
     background-color: white;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
-.card__text h2, p, h3{
+.card__img img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card__text h2, p, h4{
     text-align: center;
     text-transform: uppercase;
     margin: 10px 0px;
@@ -40,6 +45,30 @@ body{
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
+.card__btn{
+    width: 120px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    padding: 5px 8px;
+    background-color: rgb(26, 177, 144);
+    color: white;
+    border: solid 1px rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    
+}
+
+.card__btn:hover{
+    cursor: pointer;
+    background-color: rgb(11, 139, 112);
+}
+
+.card__btn:active{
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+}
 
 .contador{
     display: flex;
@@ -53,8 +82,10 @@ body{
 }
 
 .card__detail{
+    position: relative;
+    top: 80px;
     width: 900px;
-    height: 320px;
+    height: 300px;
     border-radius: 5px;
     background-color: white;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
@@ -71,7 +102,7 @@ body{
     "img text inputs"
     "img text inputs"
     "img text inputs";
-    align-items: center;
+    align-items: stretch;
     justify-items: center;
 }
 
@@ -79,10 +110,18 @@ body{
     grid-area: img;
 }
 
-.card__detail--text{
+.card__detail--info{
     grid-area: text;
+    align-self: center;
 }
 
 .card__detail--inputs{
     grid-area: inputs;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }

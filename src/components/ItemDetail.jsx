@@ -1,20 +1,21 @@
 import React from "react";
 import ItemCount from "./ItemCount";
-//import img from "../assets/img/hisopos.jpg"
 
 const ItemDetail = ({item}) =>{
     return(
         <div className="card__detail">
             <div className="card__detail--container">
                 <div className="card__detail--img">
-                    <h2>{item.nombre}</h2>
+                    <img src={item.img} alt={item.nombre}/>
                 </div>
-                <div className="card__detail--text">
+                <div className="card__detail--info">
                     <p>{item.descripcion}</p>
                 </div>
                 <div className="card__detail--inputs">
-                    <h3>precio: $ {item.precio}</h3>
+                    <h4>{item.nombre}</h4>
+                    <h4>precio: $ {item.precio}</h4>
                     <ItemCount var1={item.stock} var2={1}/>
+                    <input className="card__btn" type="button" value="add to cart" /> 
                 </div>
             </div>
         </div>
