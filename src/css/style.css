@@ -14,6 +14,7 @@ body{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-rows: auto;
     grid-template-areas: "card card card card";
+    justify-items: center;
 }
 
 .card{
