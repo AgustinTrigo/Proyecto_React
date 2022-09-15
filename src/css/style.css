@@ -52,6 +52,7 @@ body{
     font-family: 'Oswald', sans-serif;
     font-weight: 600;
     font-size: 1em;
+    margin-top: 15px;
     padding: 5px 8px;
     background-color: rgb(26, 177, 144);
     color: white;

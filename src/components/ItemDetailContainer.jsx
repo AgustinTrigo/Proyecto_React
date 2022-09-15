@@ -26,7 +26,6 @@ const ItemDetailContainer = () =>{
 
         getItem.then((respuesta) => {
             const producto = respuesta.find((e)=> e.id === id)
-            console.log(producto)
             setItem(producto);
         });
 
