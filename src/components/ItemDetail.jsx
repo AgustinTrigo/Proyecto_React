@@ -1,13 +1,23 @@
 import React from "react";
+import { useContext } from "react";
+import { CartContext } from "../context/cartContext";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({item}) =>{
 
-    const onAdd = (count, prod) =>{
-        console.log("Agregaste " + count + " " + prod)
+    const {addToCart, removeItem} = useContext(CartContext);
+
+    const onAdd = (count) =>{
+        if(count <= item.stock){
+            item.stock = item.stock - count;
+            addToCart(item, count);
+        }
     }
 
-    console.log(item.nombre)
+    const sacar = () =>{
+        removeItem(item);
+    }
+
     return(
         <div className="card__detail">
             <div className="card__detail--container">
@@ -18,7 +28,7 @@ const ItemDetail = ({item}) =>{
                     <p>{item.descripcion}</p>
                 </div>
                 <div className="card__detail--inputs">
-                    <h4>{item.nombre}</h4>
+                    <h4 onClick={sacar}>{item.nombre}</h4>
                     <h4>precio: $ {item.precio}</h4>
                     <ItemCount var1={item.stock} var2={1} funcion={onAdd} var4={item.nombre}/>
                 </div>

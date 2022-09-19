@@ -18,6 +18,7 @@ const ItemListContainer = () =>{
 
         let categoria = "";
         console.log()
+        
         switch(tipo){
             case "cocina":
                 categoria = "cocina";
@@ -49,9 +50,7 @@ const ItemListContainer = () =>{
     }, [tipo]);
 
     return (
-        <div>
-            <ItemList items={items} />
-        </div>
+        <ItemList items={items} />
     )
 }
 
