@@ -16,21 +16,7 @@ const ItemListContainer = () =>{
             {"id":4, "nombre":"cepillo de dientes", "precio":400, "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nobis.", "stock":2, "img":"../imagenes/cepillos_dientes.jpg", "categoria":"baño"}
         ];
 
-        let categoria = "";
-        console.log()
-        
-        switch(tipo){
-            case "cocina":
-                categoria = "cocina";
-            break
-            case "baño":
-                categoria = "baño";
-            break
-            case "personal":
-                categoria = "personal";
-            break
-            default:
-        }
+        let categoria = tipo;
 
         const getProductos = new Promise((resolve) => {
             setTimeout(() => {
@@ -39,7 +25,7 @@ const ItemListContainer = () =>{
         });
 
         getProductos.then((respuesta) => {
-            if(categoria === ""){
+            if(tipo === undefined){
                 setItems(respuesta)
             }else{
                 const productoFiltrado = respuesta.filter(e => e.categoria === categoria);

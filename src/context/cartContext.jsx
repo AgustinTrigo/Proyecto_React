@@ -31,12 +31,13 @@ const CartProvider = ({children}) =>{
         setCart([]);
     }
 
+    /*
     const cartTotal = () => {
         let total = 0;
         let cantidadTotal = cart.reduce((total, item) => total+=item.cantidad, 0);
         let precioTotal = cart.reduce((total, item) => total+=item.precio, 0);
-        return total= cantidadTotal * precioTotal;
-    }
+        return total = cantidadTotal * precioTotal;
+    }*/
 
     //Funcion para remover un item seleccionado, como prueba agregue el evento en el H4 con el nombre del producto en ItemDetail y funciona correctamente.
     const removeItem = (item) =>{
@@ -45,7 +46,7 @@ const CartProvider = ({children}) =>{
     }
 
     return(
-        <CartContext.Provider value={{addToCart, isInCart, clear, cartTotal, removeItem}}>
+        <CartContext.Provider value={{addToCart, isInCart, clear, removeItem, cart}}>
             {children}
         </CartContext.Provider>
     )
