@@ -6,7 +6,7 @@ import CartView from "./CartView";
 const Cart = () =>{
 
     const {cart} = useContext(CartContext);
-    
+    console.log(cart)
     return(
         <div className="cart__container">
             <div className="cart-bg cart__items">
@@ -18,11 +18,15 @@ const Cart = () =>{
                         <h5>Subtotal</h5>
                     </div>
                 </div> */}
-                {cart.map(item => (
+                {cart.length === 0 ?
+                (<h3>SU CARRITO ESTA VACIO</h3>)
+                :
+                (cart.map(item => (
                     <div key={item.id}>
                         <CartView prop={item}/>
                     </div>)
-                )}
+                ))
+                }
             </div>
             <div className="cart-bg cart__details"></div>
         </div>
