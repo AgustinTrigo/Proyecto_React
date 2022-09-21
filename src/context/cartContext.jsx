@@ -39,10 +39,9 @@ const CartProvider = ({children}) =>{
         return total = cantidadTotal * precioTotal;
     }*/
 
-    //Funcion para remover un item seleccionado, como prueba agregue el evento en el H4 con el nombre del producto en ItemDetail y funciona correctamente.
     const removeItem = (item) =>{
-        let producto = cart.find(e => e.id === item.id);
-        return console.log(cart.splice(cart.indexOf(producto), 1))
+        const productosFiltrados = cart.filter(e => e.id !== item.id);
+        return setCart(productosFiltrados);
     }
 
     return(
