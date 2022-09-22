@@ -6,12 +6,10 @@ import ItemCount from "./ItemCount";
 const ItemDetail = ({item}) =>{
 
     const {addToCart, removeItem} = useContext(CartContext);
+    
 
     const onAdd = (count) =>{
-        if(count <= item.stock){
-            item.stock = item.stock - count;
-            addToCart(item, count);
-        }
+        addToCart(item, count);
     }
 
     const sacar = () =>{
@@ -30,7 +28,7 @@ const ItemDetail = ({item}) =>{
                 <div className="card__detail--inputs">
                     <h4 onClick={sacar}>{item.nombre}</h4>
                     <h4>precio: $ {item.precio}</h4>
-                    <ItemCount var1={item.stock} var2={1} funcion={onAdd} var4={item.nombre}/>
+                    <ItemCount stock={item.stock} valorInicial={1} addCart={onAdd}/>
                 </div>
             </div>
         </div>

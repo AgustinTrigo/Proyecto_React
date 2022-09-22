@@ -109,3 +109,9 @@
 .cart__btn:active{
     color: rgb(0, 0, 0);
 }
+
+.cart__count{
+    position: absolute;
+    top: 3px;
+    right: 80px;
+}

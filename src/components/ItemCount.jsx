@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ItemCount = ({var1, var2, funcion, var4}) =>{
-    const [count, setCount] = useState(var2);
+const ItemCount = ({stock, valorInicial, addCart}) =>{
+    const [count, setCount] = useState(valorInicial);
+    const [added, setAdded] = useState(false);
     
     return(
         <div>
             <div className="contador"> 
-                <input type="button" value="-" onClick={()=>{if(count > var2){setCount(count - 1)}}}/>
+                <input type="button" value="-" onClick={()=>{if(count > valorInicial){setCount(count - 1)}}}/>
                 <h4>{count}</h4>
-                <input type="button" value="+" onClick={()=>{if(count < var1){setCount(count + 1)}}}/>
+                <input type="button" value="+" onClick={()=>{if(count < stock){setCount(count + 1)}}}/>
             </div>
-            <Link to="/cart"><input className="card__btn" type="button" value="add to cart" onClick={()=> funcion(count, var4)}/></Link>
+            {!added ? 
+            <input className="card__btn" type="button" value="add to cart" onClick={()=> {addCart(count), setAdded(true)}}/> 
+            : 
+            <Link to="/cart"><input className="card__btn added" type="button" value="ir al carrito"/></Link>
+            }
+            {!added ? "" : <Link to="/"><h6>seguir comprando</h6></Link>}
         </div>
     )
 }
