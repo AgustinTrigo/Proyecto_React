@@ -5,8 +5,7 @@ import CartView from "./CartView";
 
 const Cart = () =>{
 
-    const {cart} = useContext(CartContext);
-    console.log(cart)
+    const {cart, sumarTotal, clear} = useContext(CartContext);
     return(
         <div className="cart__container">
             <div className="cart-bg cart__items">
@@ -19,7 +18,7 @@ const Cart = () =>{
                     </div>
                 </div> */}
                 {cart.length === 0 ?
-                (<h3>SU CARRITO ESTA VACIO</h3>)
+                <h3>SU CARRITO ESTA VACIO</h3>
                 :
                 (cart.map(item => (
                     <div key={item.id}>
@@ -28,7 +27,16 @@ const Cart = () =>{
                 ))
                 }
             </div>
-            <div className="cart-bg cart__details"></div>
+            
+            {cart.length !== 0 ?
+                <div className="cart-bg cart__details">
+                    <h4>TOTAL: {sumarTotal()}</h4>
+                    <input type="button" className="card__btn added" value="vaciar carrito" onClick={()=>clear()} onChange={()=>{}}/>
+                </div>
+                :
+                ""
+            }   
+            
         </div>
     )
 }

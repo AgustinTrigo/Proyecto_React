@@ -26,6 +26,11 @@
     justify-content: space-evenly;
 }
 
+.cart__items h3{
+    align-self: center;
+    padding-bottom: 15px;
+}
+
 .cart__items--container{
     display: flex;
     flex-direction: row;
@@ -92,6 +97,9 @@
 
 .cart__details{
     grid-area: detail;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cart__btn{

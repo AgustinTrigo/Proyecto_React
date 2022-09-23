@@ -13,12 +13,15 @@ const CartProvider = ({children}) =>{
             let producto = cart.find(e => e.id === item.id);
             //Da la referencia a indexOf() del elemento para sumar la cantidad
             cart[cart.indexOf(producto)].cantidad += cantidad;
+            cart[cart.indexOf(producto)].subtotal += cantidad * item.precio;
             //"actualiza" el estado.
             setCart([...cart]);
         }else{
             //guarda el producto en el estado.
-            setCart([...cart, {...item, cantidad}]);
+            setCart([...cart, {...item, cantidad, subtotal: (item.precio * cantidad)}]);
         }
+
+
     }
 
     const isInCart = (id) => {
@@ -31,6 +34,16 @@ const CartProvider = ({children}) =>{
         setCart([]);
     }
 
+    
+    const sumarTotal = () =>{
+        const copia = [...cart];
+        let total = 0;
+        copia.forEach((producto) =>{
+            total += producto.subtotal;
+        })
+        return total;
+    }
+    
     
     const cantidadTotal = () => {
         const copia = [...cart];
@@ -47,7 +60,7 @@ const CartProvider = ({children}) =>{
     }
 
     return(
-        <CartContext.Provider value={{addToCart, isInCart, clear, removeItem, cart, cantidadTotal}}>
+        <CartContext.Provider value={{addToCart, isInCart, clear, removeItem, cart, cantidadTotal, sumarTotal}}>
             {children}
         </CartContext.Provider>
     )

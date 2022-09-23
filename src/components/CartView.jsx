@@ -18,7 +18,7 @@ const CartView = ({props}) => {
                 <div className="cart__items--data_info">
                     <h4>$ {props.precio}</h4>
                     <h4>{props.cantidad}</h4>
-                    <h4>$ {props.precio}</h4>
+                    <h4>$ {props.subtotal}</h4>
                 </div>
                 <button className="cart__btn" onClick={()=>removeItem(props)}><i className="fa-solid fa-trash-can"></i></button>
             </div>
