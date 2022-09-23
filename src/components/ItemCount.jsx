@@ -13,7 +13,7 @@ const ItemCount = ({stock, valorInicial, addCart}) =>{
                 <input type="button" value="+" onClick={()=>{if(count < stock){setCount(count + 1)}}}/>
             </div>
             {!added ? 
-            <input className="card__btn" type="button" value="add to cart" onClick={()=> {addCart(count), setAdded(true)}}/> 
+            <input className="card__btn" type="button" value="add to cart" onClick={()=> {addCart(count); setAdded(true)}}/> 
             : 
             <Link to="/cart"><input className="card__btn added" type="button" value="ir al carrito"/></Link>
             }

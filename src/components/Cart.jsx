@@ -23,7 +23,7 @@ const Cart = () =>{
                 :
                 (cart.map(item => (
                     <div key={item.id}>
-                        <CartView prop={item}/>
+                        <CartView props={item}/>
                     </div>)
                 ))
                 }

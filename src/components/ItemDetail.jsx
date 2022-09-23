@@ -5,15 +5,11 @@ import ItemCount from "./ItemCount";
 
 const ItemDetail = ({item}) =>{
 
-    const {addToCart, removeItem} = useContext(CartContext);
+    const {addToCart} = useContext(CartContext);
     
 
     const onAdd = (count) =>{
         addToCart(item, count);
-    }
-
-    const sacar = () =>{
-        removeItem(item);
     }
 
     return(
@@ -26,8 +22,8 @@ const ItemDetail = ({item}) =>{
                     <p>{item.descripcion}</p>
                 </div>
                 <div className="card__detail--inputs">
-                    <h4 onClick={sacar}>{item.nombre}</h4>
-                    <h4>precio: $ {item.precio}</h4>
+                    <h4>{item.nombre}</h4>
+                    <h4>$ {item.precio}</h4>
                     <ItemCount stock={item.stock} valorInicial={1} addCart={onAdd}/>
                 </div>
             </div>

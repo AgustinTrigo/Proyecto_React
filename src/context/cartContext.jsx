@@ -6,7 +6,6 @@ export const CartContext = createContext();
 const CartProvider = ({children}) =>{
 
     const [cart, setCart] = useState([]);
-    const [totalCount, setTotalCount] = useState([]);
 
     const addToCart = (item, cantidad) =>{
         if(isInCart(item.id)){
