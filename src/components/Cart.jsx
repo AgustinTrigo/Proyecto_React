@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { CartContext } from "../context/cartContext";
 import CartView from "./CartView";
+import { Link } from "react-router-dom";
 
 const Cart = () =>{
 
@@ -9,16 +10,23 @@ const Cart = () =>{
     return(
         <div className="cart__container">
             <div className="cart-bg cart__items">
-                {/* <div className="etiquetas">
+                {cart.length !== 0 ?
+                <div className="etiquetas">
                     <h5>Producto</h5>
                     <div>
                         <h5>Precio unitario</h5>
                         <h5>Cant.</h5>
                         <h5>Subtotal</h5>
                     </div>
-                </div> */}
+                </div>
+                :
+                ""
+                }   
                 {cart.length === 0 ?
-                <h3>SU CARRITO ESTA VACIO</h3>
+                <div className="mjs">
+                    <h3>SU CARRITO ESTA VACIO</h3>
+                    <Link to="/"><h5>VOLVER A LA TIENDA</h5></Link>
+                </div>
                 :
                 (cart.map(item => (
                     <div key={item.id}>
@@ -30,7 +38,7 @@ const Cart = () =>{
             
             {cart.length !== 0 ?
                 <div className="cart-bg cart__details">
-                    <h4>TOTAL: {sumarTotal()}</h4>
+                    <h4>TOTAL: $  {sumarTotal()}</h4>
                     <input type="button" className="card__btn added" value="vaciar carrito" onClick={()=>clear()} onChange={()=>{}}/>
                 </div>
                 :
