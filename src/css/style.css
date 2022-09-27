@@ -143,3 +143,61 @@ body{
     justify-content: space-evenly;
     align-items: center;
 }
+
+
+.checkout{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+    grid-template-areas: ". form check .";
+    margin-top: 80px;
+}
+
+.checkout__form{
+    grid-area: form;
+    padding-bottom: 35px;
+}
+
+.checkout__form input, label{
+    display: block;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.checkout__form label{
+    height: 25px;
+    margin-top: 25px;
+}
+
+.checkout__detail{
+    grid-area: check;
+}
+
+.checkout__btn{
+    width: 120px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding: 5px 8px 20px 8px;
+    background-color: rgb(26, 177, 144);
+    color: white;
+    border: solid 1px rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    
+}
+
+
+.checkout__btn:hover{
+    cursor: pointer;
+    background-color: rgb(11, 139, 112);
+}
+
+.checkout__btn:active{
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+}

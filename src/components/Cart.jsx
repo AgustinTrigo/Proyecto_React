@@ -40,6 +40,7 @@ const Cart = () =>{
                 <div className="cart-bg cart__details">
                     <h4>TOTAL: $  {sumarTotal()}</h4>
                     <input type="button" className="card__btn added" value="vaciar carrito" onClick={()=>clear()} onChange={()=>{}}/>
+                    <Link to="/checkout/"><input type="button" className="card__btn" value="iniciar compra"/></Link>
                 </div>
                 :
                 ""
