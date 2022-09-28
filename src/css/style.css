@@ -147,10 +147,10 @@ body{
 
 .checkout{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
     gap: 30px;
-    grid-template-areas: ". form check .";
+    grid-template-areas: ". form check check .";
     margin-top: 80px;
 }
 
@@ -171,7 +171,24 @@ body{
 }
 
 .checkout__detail{
+    position: relative;
     grid-area: check;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.checkout__detail--info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 100%;
+    border-right: solid 1px black;
+}
+
+.checkout__detail--info h4{
+    margin-top: 230px;
 }
 
 .checkout__btn{
