@@ -1,26 +1,46 @@
 import React from "react";
+import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../context/cartContext";
+import {serverTimestamp} from "firebase/firestore"
 
 const Checkout = () =>{
 
     const {cart, sumarTotal} = useContext(CartContext);
 
+    const [nombre, setNombre] = useState("");
+    const [apellido, setApellido] = useState("");
+    const [email, setEmail] = useState("");
+
+    const total = sumarTotal();
+    const sendOrders = () => {
+
+
+        const orden = {
+            buyer: {nombre, apellido, email},
+            items: cart,
+            total,
+        }
+
+        console.log(orden);
+    }
+        
 
     return (
         <div className="checkout">
             <form className="cart-bg checkout__form">
-                <label for="nombre">NOMBRE</label>
-                <input name="nombre" type="text" placeholder="Ingresa tu nombre"/>
-                <label for="apellido">APELLIDO</label>
-                <input name="apellido" type="text" placeholder="Ingresa tu apellido"/>
-                <label for="email">EMAIL</label>
-                <input name="email" type="text" placeholder="ejemplo@hotmail.com"/>
-                <input type="button" className="checkout__btn" value="comprar"/>
+                <label htmlFor="nombre">NOMBRE</label>
+                <input name="nombre" type="text" placeholder="  Ingresa tu nombre" onChange={(e)=>{setNombre(e.target.value)}}/>
+                <label htmlFor="apellido">APELLIDO</label>
+                <input name="apellido" type="text" placeholder="  Ingresa tu apellido" onChange={(e)=>{setApellido(e.target.value)}}/>
+                <label htmlFor="email">EMAIL</label>
+                <input name="email" type="text" placeholder="  ejemplo@hotmail.com" onChange={(e)=>{setEmail(e.target.value)}}/>
+                <input type="button" className="checkout__btn" value="finalizar compra" onClick={()=>sendOrders()}/>
             </form>
             <div className="cart-bg checkout__detail">
                 <div className="checkout__detail--info">
-                    <h4>TOTAL: $  {sumarTotal()}</h4>
+                    <h4>TOTAL</h4>
+                    <h4>$ {total}</h4>
                 </div>
                 {cart.map(e =>(
                     <div key={e.id} className="cart__items--container">
