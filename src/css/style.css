@@ -157,6 +157,8 @@ body{
 .checkout__form{
     grid-area: form;
     padding-bottom: 35px;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
 }
 
 .checkout__form label{
@@ -167,17 +169,18 @@ body{
     margin-left: 15px;
     margin: 20px 0px 10px 15px;
     border-radius: 20px;
-    background-image: linear-gradient(to right, rgba(231, 97, 19, 0.959),  white);
+    background-color: rgba(231, 97, 19, 0.959);
     padding: 10px 0px 30px 15px;
     color: white;
     border-bottom-left-radius: 0px;
     border-top-right-radius: 0px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 .checkout__form input{
     display: block;
     width: 230px;
-    border: solid 1px black;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
     height: 30px;
     border-radius: 50px;
     margin-left: 15px;
@@ -192,6 +195,7 @@ body{
     flex-direction: column;
     align-items: center;
     color: rgb(99, 98, 98);
+    border-radius: 20px;
 }
 
 .checkout__detail--info{

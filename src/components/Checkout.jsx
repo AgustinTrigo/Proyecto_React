@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../context/cartContext";
-import {serverTimestamp} from "firebase/firestore"
+import {addDoc, collection, getFirestore} from "firebase/firestore";
 
 const Checkout = () =>{
 
@@ -11,6 +11,7 @@ const Checkout = () =>{
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
     const [email, setEmail] = useState("");
+    const [orderId, setOrderId] = useState("");
 
     const total = sumarTotal();
     const sendOrders = () => {
@@ -22,7 +23,14 @@ const Checkout = () =>{
             total,
         }
 
-        console.log(orden);
+        const db = getFirestore();
+        const refOrder = collection(db, "orders")
+        addDoc(refOrder, orden).then((res)=>{
+            setOrderId(res.id);
+        })
+
+        console.log(orderId)
+
     }
         
 
