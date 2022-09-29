@@ -60,8 +60,8 @@ const Checkout = () =>{
             </div>
             :
             <div className="cart-bg checkout__compra">
-                <p>Feliziticaciones tu compra fue realizada con exito</p>
-                <h4>orden #{orderId} </h4>
+                <p>Felicitaciones tu compra fue realizada con exito</p>
+                <h4>Nro. orden: {orderId} </h4>
             </div>
             }
         </div>
