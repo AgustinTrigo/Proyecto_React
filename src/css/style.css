@@ -180,12 +180,13 @@ body{
 .checkout__form input{
     display: block;
     width: 230px;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.1);
     height: 30px;
     border-radius: 50px;
     margin-left: 15px;
     border-top-left-radius: 0px;
     padding-left: 15px;
+    border: none;
 }
 
 
@@ -236,4 +237,8 @@ body{
     background-color: white;
     color: black;
     border: solid 1px black;
+}
+
+.checkout__compra{
+    grid-area: form;
 }
