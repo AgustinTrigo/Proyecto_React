@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../context/cartContext";
-import {serverTimestamp} from "firebase/firestore"
 
 const Checkout = () =>{
 
