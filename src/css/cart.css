@@ -23,7 +23,7 @@
     grid-area: cartItem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 
 .cart__items h3{

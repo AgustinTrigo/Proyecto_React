@@ -12,6 +12,7 @@ const Checkout = () =>{
     const total = sumarTotal();
 
     const sendOrders = (nombre, apellido, email) => {
+
         const orden = {
             buyer: {nombre, apellido, email},
             items: cart,

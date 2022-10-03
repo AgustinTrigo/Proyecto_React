@@ -159,6 +159,7 @@ body{
     padding-bottom: 35px;
     border-top-left-radius: 50%;
     border-bottom-right-radius: 50%;
+    max-height: 430px;
 }
 
 .checkout__form label{
@@ -178,7 +179,7 @@ body{
 }
 
 .checkout__form input{
-    display: block;
+    display: inline-block;
     width: 230px;
     box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.1);
     height: 30px;
@@ -241,4 +242,10 @@ body{
 
 .checkout__compra{
     grid-area: form;
+}
+
+.alert{
+    display: inline-block;
+    color: red;
+    margin-left: 10px;
 }
