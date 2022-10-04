@@ -4,10 +4,12 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 import {getFirestore, doc, getDoc} from "firebase/firestore";
+import Loader from "./Loader";
 
 const ItemDetailContainer = () =>{
     
     const [item, setItem] = useState({});
+    const [loading, setLoading] = useState(true);
     const {id} = useParams();
 
     useEffect(()=>{
@@ -18,6 +20,7 @@ const ItemDetailContainer = () =>{
         getDoc(item).then((snapshot)=>{
             if(snapshot.exists()){
                 setItem({id: snapshot.id, ...snapshot.data()});
+                setLoading(false);
             }
         })
 
@@ -25,7 +28,10 @@ const ItemDetailContainer = () =>{
     
 
     return(
-        <ItemDetail item={item} />
+        <>
+            {loading ? <Loader /> : <ItemDetail item={item} />}
+        </>
+        
     )
 }
 

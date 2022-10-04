@@ -1,0 +1,31 @@
+.outsideForm{
+    position: relative;
+    top:50px;
+    left: 45%;
+    width: 50px;
+    height: 50px;
+    margin-top: 74px;
+    margin-left: 74px;
+    animation-name: rotar;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    border-radius: 50%;
+    background-image: linear-gradient(to top right, rgb(0, 247, 103), rgb(3, 145, 138),rgb(5, 111, 129) );
+}
+
+.innerForm{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+@keyframes rotar {
+    100%{
+        transform: rotateZ(360deg)
+    }
+}
