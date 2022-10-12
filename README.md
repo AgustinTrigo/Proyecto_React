@@ -1,5 +1,5 @@
 
-# +MAR: Eccomerce de productos sustentables
+# +MAR: Ecommerce de productos sustentables
 
 ## Deploy:
 
