@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import Loader from "./Loader";
+import { Link } from "react-router-dom";
 
 const ItemListContainer = () =>{
     
@@ -25,9 +26,17 @@ const ItemListContainer = () =>{
     }, [tipo]);
 
     return (
-        <>
+        <div className="productos">
+            <div className="cart-bg submenu">
+                <h4>categorias</h4>
+                <ul>
+                    <li><Link to="/categorias/cocina">cocina</Link></li>
+                    <li><Link to="/categorias/baño">baño</Link></li>
+                    <li><Link to="/categorias/personal">personal</Link></li>
+                </ul>
+            </div>
             {loading ? <Loader /> : <ItemList items={items} />}
-        </>
+        </div>
         
     )
 }

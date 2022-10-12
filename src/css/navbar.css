@@ -8,7 +8,6 @@
 
 .navbar h2, li{
     color: white;
-    
     font-weight: 300;
     text-transform: uppercase;
 }
@@ -37,7 +36,7 @@
 
 .navbar__list li{
     display: inline-block;
-    margin: 5px 10px;
+    margin: 5px 20px;
     font-size: 1.8em;
     font-weight: 200;
 }
@@ -46,7 +45,7 @@
     letter-spacing: 1.3px;
     text-decoration: none;
     color: white;
-    
+    font-size: .85em;
 }
 
 a:hover{

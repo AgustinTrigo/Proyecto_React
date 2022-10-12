@@ -9,7 +9,33 @@ body{
     background-color: rgb(243, 239, 236);
 }
 
+.productos{
+    display: grid;
+    grid-template-columns: 300px 1f;
+    grid-template-areas: "submenu galery";
+
+}
+
+.submenu{
+    grid-area: submenu;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.submenu li{
+    margin: 20px 0px 15px 40px;
+}
+
+.submenu a{
+    text-decoration: none;
+}
+
+
 .galeria{
+    grid-area: galery;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-rows: auto;
