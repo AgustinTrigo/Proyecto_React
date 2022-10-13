@@ -13,7 +13,7 @@ const NavBar = () =>{
             
             <ul className="navbar__list">
                 <li><Link to="/">productos</Link></li>
-                <li><Link to="/">tu compra</Link></li>
+                <li><Link to="/orders">tu compra</Link></li>
             </ul>
             <CartWidget />
         </nav>
