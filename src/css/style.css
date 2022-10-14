@@ -186,6 +186,7 @@ body{
     border-top-left-radius: 50%;
     border-bottom-right-radius: 50%;
     max-height: 430px;
+    background-color: rgb(242, 252, 233)
 }
 
 .checkout__form label{
@@ -196,7 +197,7 @@ body{
     margin-left: 15px;
     margin: 20px 0px 10px 15px;
     border-radius: 20px;
-    background-color: rgba(231, 97, 19, 0.959);
+    background-color: rgba(230, 118, 53, 0.959);
     padding: 10px 0px 30px 15px;
     color: white;
     border-bottom-left-radius: 0px;
