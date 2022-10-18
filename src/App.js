@@ -11,6 +11,7 @@ import CartProvider from './context/cartContext';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import Orders from './components/Orders';
+import MiCompra from './components/MiCompra';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
 					<Route exact path="/producto/:id" element={<ItemDetailContainer />}/>
 					<Route exact path="/cart/" element={<Cart />}/>
 					<Route exact path="/checkout/" element={<Checkout />}/>
+					<Route exact path="/micompra" element={<MiCompra/>}/>
 				</Routes>
 			</BrowserRouter>
       	</CartProvider>

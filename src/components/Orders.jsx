@@ -1,18 +1,31 @@
+import { getDocs, where, query, collection, getDoc, getFirestore } from "firebase/firestore";
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import MiCompra from "./MiCompra";
 
 const Orders = () =>{
+
+    const [orders, setOrders] = useState();
+
+    useEffect(()=>{
+        const db = getFirestore();
+        const ordersCollection = collection(db, "orders");
+        getDocs(ordersCollection).then((snapshot) =>{
+            setOrders((snapshot.docs.map((e)=>({id: e.id, ...e.data()}))))
+        })
+    },[])
+
+    const filtrarOrdenes = (orders, nombre, orderNbr) => {
+        console.log(orders);
+        console.log(nombre);
+        console.log(orderNbr);
+        console.log(orders.find(e =>{if((e.buyer.nombre === nombre) && (e.id === orderNbr)){return e}}))
+    }
+
     return(
-        <div className="container">
-            <div className="buscador">
-                <p>Ingresa los datos para ver tu compra</p>
-                <label htmlFor="nombre">NOMBRE</label>
-                <input name="nombre" type="text"/>
-                <label htmlFor="orderNbr">ORDEN #</label>
-                <input name="orderNbr" type="text"/>
-                <input type="button" className="card__btn" value="BUSCAR"/>
-            </div>
-            
-        </div>
+        <MiCompra filtrarOrdenes={filtrarOrdenes} orders={orders}/>
     )
 }
 

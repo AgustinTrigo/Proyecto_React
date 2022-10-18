@@ -16,7 +16,7 @@ const Checkout = () =>{
         const orden = {
             buyer: {nombre, apellido, email},
             items: cart,
-            total,
+            total
         }
 
         const db = getFirestore();
