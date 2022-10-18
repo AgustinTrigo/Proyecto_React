@@ -12,8 +12,8 @@ const NavBar = () =>{
             </div>
             
             <ul className="navbar__list">
-                <li><Link to="/">productos</Link></li>
-                <li><Link to="/orders">tu compra</Link></li>
+                <li><Link to="/">catalogo</Link></li>
+                <li><Link to="/orders">mi compra</Link></li>
             </ul>
             <CartWidget />
         </nav>
