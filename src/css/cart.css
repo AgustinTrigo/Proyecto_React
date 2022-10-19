@@ -7,12 +7,11 @@
 }
 
 .cart__container{
-    
     display: grid;
-    grid-template-columns: 300px 2fr 1fr 300px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "cartItem cartItem detail";
     grid-auto-rows: auto;
     column-gap: 50px;
-    grid-template-areas: ". cartItem detail .";
     justify-content: center;
     margin-top: 80px;
     
@@ -36,18 +35,19 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin: 10px 0px 10px 20px;
+    margin: 10px 0px 10px 30px;
+    align-self: center;
     max-width: 580px;
 }
 
 
 .etiquetas{
-    position: absolute;
-    top: 10px;
+    position: relative;
+    top: 0px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 780px;
+    width: auto;
     color: rgb(78, 78, 78);
     
 }

@@ -1,13 +1,12 @@
 .container{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
 }
 
 
 .buscador{
-    grid-area: 2 / 3 / 4 / 3;
-    /*background-color: rgb(242, 252, 233);*/
+    grid-area: 2 / 2 / 4 / 3;
     background-color: white;
     height: 380px;
     margin-top: 100px;
@@ -61,4 +60,13 @@
     grid-area: 2/ 2/ 4/ 5;
     border: solid 2px blue;
     margin-top: 100px;
+}
+
+.mensajeError{
+    position: absolute;
+    bottom: 0px;
+    color: red;
+    font-size: .8em;
+    text-align: center;
+    text-transform: uppercase;
 }

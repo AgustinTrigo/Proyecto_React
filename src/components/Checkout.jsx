@@ -4,6 +4,7 @@ import { CartContext } from "../context/cartContext";
 import {addDoc, collection, getFirestore} from "firebase/firestore";
 import Formcheckout from "./Formcheckout";
 import CartDetail from "./CartDetail";
+import { Link } from "react-router-dom";
 
 const Checkout = () =>{
 
@@ -40,7 +41,9 @@ const Checkout = () =>{
             :
             <div className="cart-bg checkout__compra">
                 <p>Felicitaciones tu compra fue realizada con exito</p>
-                <h4>Nro. orden: {orderId} </h4>
+                <p>Copia el numero de orden e ingresa a {<Link to="/orders">"mi compra"</Link>} para ver el detalle de tu pedido.</p>
+                <h4>N° ORDEN: </h4>
+                <h4>{orderId}</h4>
             </div>
             }
         </div>

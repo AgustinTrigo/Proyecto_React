@@ -6,6 +6,7 @@ import './css/loader.css'
 import './css/cart.css'
 import './css/navbar.css'
 import './css/style.css';
+import './css/mediaQuerys.css'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import CartProvider from './context/cartContext';
 import Cart from './components/Cart';

@@ -11,33 +11,49 @@ body{
 
 .productos{
     display: grid;
-    grid-template-columns: 300px 1f;
+    grid-template-columns: 300px auto;
     grid-template-areas: "submenu galery";
 
 }
 
 .submenu{
     grid-area: submenu;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-radius: 0px 0px 50px 50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
+    min-width: 200px;
+    max-width: 230px;
+    max-height: 400px;
+    margin-left: 20px;
 }
 
 .submenu li{
-    margin: 20px 0px 15px 40px;
+    margin: 20px 0px;
+    text-align: center;
 }
 
 .submenu a{
     text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.6em;
+    letter-spacing: 2px;
+    color: rgb(0, 89, 95);
 }
 
+.submenu h4{
+    color: rgb(61, 61, 61);
+}
+
+.submenu li:hover > a {
+    color: rgb(209, 84, 0);
+}
 
 .galeria{
     grid-area: galery;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto;
     grid-template-areas: "card card card card";
     justify-items: center;
@@ -176,7 +192,7 @@ body{
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
     gap: 30px;
-    grid-template-areas: ". form check check .";
+    grid-template-areas: "form form check check check";
     margin-top: 80px;
 }
 
@@ -268,7 +284,12 @@ body{
 }
 
 .checkout__compra{
-    grid-area: 1/3/1/4;
+    grid-area: 1/2/1/5;
+    color: rgb(0, 89, 95);
+}
+
+.checkout__compra h4{
+    text-transform: none;
 }
 
 .alert{

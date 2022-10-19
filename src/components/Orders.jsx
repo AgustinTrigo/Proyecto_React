@@ -9,6 +9,7 @@ const Orders = () =>{
 
     const [orders, setOrders] = useState();
     const [miCompra, setMiCompra] = useState();
+    const [validacion, setValidacion] = useState(false);
 
     useEffect(()=>{
         const db = getFirestore();
@@ -21,16 +22,17 @@ const Orders = () =>{
     const filtrarOrdenes = (orders, nombre, orderNbr) => {
         orders.find(e => {
             if((e.buyer.nombre === nombre) && (e.id === orderNbr)){
+                setValidacion(false);
                 return setMiCompra(e);
             }else{
-                return false;
+                return setValidacion(true);
             }
         })
     }
 
     return(
         <>
-            {miCompra === undefined ? <MiCompra filtrarOrdenes={filtrarOrdenes} orders={orders}/> : <DetalleMiCompra miCompra={miCompra}/> }
+            {miCompra === undefined ? <MiCompra filtrarOrdenes={filtrarOrdenes} orders={orders} validacion={validacion}/> : <DetalleMiCompra miCompra={miCompra}/> }
         </>
     )
 }

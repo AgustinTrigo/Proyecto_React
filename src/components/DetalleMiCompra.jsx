@@ -2,12 +2,9 @@ import React from "react";
 
 const DetalleMiCompra = ({miCompra}) =>{
 
-
-    console.log(miCompra);
-
     return(
         <div className="cart-bg checkout__detail">
-            <p>Hola {miCompra.buyer.nombre} aqui tienes un detalle de tu compra</p>
+            <p>Hola {miCompra.buyer.nombre} aqui puedes ver un detalle de tu compra</p>
             <div className="checkout__detail--info">
                 <h4>TOTAL</h4>
                 <h4>$ {miCompra.total}</h4>
