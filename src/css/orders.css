@@ -63,8 +63,8 @@
 }
 
 .mensajeError{
-    position: absolute;
-    bottom: 0px;
+    position: relative;
+    bottom: -35px;
     color: red;
     font-size: .8em;
     text-align: center;
